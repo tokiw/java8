@@ -6,10 +6,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		File[] files = {
-				new File("/Users/masafumi/Documents/workspace/java8_practice"),
-				new File("/Users/masafumi/Documents/workspace/java8_practice/ch01/ex01_03/Main.java"),
+				new File("/Users/masafumi/Documents/workspace/java8"),
+				new File("/Users/masafumi/Documents/workspace/java8/ch01/ex01_03/Main.java"),
 				new File("test.txt"),
-				new File("/Users/masafumi/Documents/workspace/java8_practice/ch01/ex01_03")
+				new File("/Users/masafumi/Documents/workspace/java8/ch01/ex01_03")
 		};
 		
 		System.out.println("ソート前");
