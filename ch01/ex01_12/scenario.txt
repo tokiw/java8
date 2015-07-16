@@ -1,0 +1,18 @@
+* JARファイル内にあるinterfaceを実装しており、
+* その実装しているinterface内に定義されているデフォルトメソッドをクラス内で使っている。
+そのクラスをその状態で古いデフォルトメソッドが実装される前に作られたJARファイルを使っている別のユーザが使うとメソッドが見つからずエラーになる。
+
+class XXX implements YYY {
+  public foo() {
+    this.bar();
+  }
+}
+
+// in new JAR file
+interface YYY {
+  default void bar() {}
+}
+
+// in old JAR file
+interface YYY {
+}
