@@ -17,8 +17,7 @@ public class CircleApp extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		Circle circle = new Circle(60, Paint.valueOf("red"));
-		Pane pane = new Pane();
-		pane.getChildren().add(circle);
+		Pane pane = new Pane(circle);
 		Scene scene = new Scene(pane, 400, 400);
 		circle.centerXProperty().bind(Bindings.divide(scene.widthProperty(), 2));
 		circle.centerYProperty().bind(Bindings.divide(scene.heightProperty(), 2));

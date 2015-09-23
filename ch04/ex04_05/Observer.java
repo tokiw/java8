@@ -13,11 +13,12 @@ public class Observer {
 		ObservableValue<R> value = new ObservableValue<R>() {
 			@Override
 			public void addListener(InvalidationListener listener) {
-				
+				t.addListener(listener);
 			}
 
 			@Override
 			public void removeListener(InvalidationListener listener) {
+				t.addListener(listener);
 			}
 
 			@Override
@@ -30,6 +31,7 @@ public class Observer {
 
 			@Override
 			public R getValue() {
+				System.out.println(t.getValue());
 				return f.apply(t.getValue());
 			}
 		};
@@ -41,7 +43,6 @@ public class Observer {
 		ObservableValue<R> value = new ObservableValue<R>() {
 			@Override
 			public void addListener(InvalidationListener listener) {
-				
 			}
 
 			@Override

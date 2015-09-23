@@ -26,6 +26,6 @@ public class Main {
 	}
 	
 	public static Stream<Character> characterStream2(String s) {
-		return IntStream.range(0, s.length()).map(s::charAt).mapToObj(i -> (char)i);
+		return IntStream.range(0, s.length()).mapToObj(s::charAt);
 	}
 }

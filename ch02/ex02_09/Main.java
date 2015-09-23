@@ -6,8 +6,18 @@ import java.util.stream.Stream;
 public class Main {
 
 	public static void main(String[] args) {
-		Stream<ArrayList<String>> arrayListStream = createStreamData();
-		ArrayList<String> arrayList = arrayListStream.reduce(new ArrayList<>(),
+		ArrayList<String> arrayList1 = reduce1(createStreamData());
+		arrayList1.stream().forEach(System.out::println);
+		
+		ArrayList<String> arrayList2 = reduce2(createStreamData());
+		arrayList2.stream().forEach(System.out::println);
+		
+		ArrayList<String> arrayList3 = reduce3(createStreamData());
+		arrayList3.stream().forEach(System.out::println);
+	}
+	
+	private static <T> ArrayList<T> reduce3(Stream<ArrayList<T>> stream) {
+		return stream.reduce(new ArrayList<>(),
 			(l, r) -> {
 				l.addAll(r);
 				return l;
@@ -17,7 +27,22 @@ public class Main {
 				return l;
 			}
 		);
-		arrayList.stream().forEach(System.out::println);
+	}
+	
+	private static <T> ArrayList<T> reduce2(Stream<ArrayList<T>> stream) {
+		return stream.reduce(new ArrayList<>(),
+			(l, r) -> {
+				l.addAll(r);
+				return l;
+			}
+		);
+	}
+	
+	private static <T> ArrayList<T> reduce1(Stream<ArrayList<T>> stream) {
+		return stream.reduce((l, r) -> {
+			l.addAll(r);
+			return l;
+		}).orElse(new ArrayList<>());
 	}
 	
 	private static Stream<ArrayList<String>> createStreamData() {

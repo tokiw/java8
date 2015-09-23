@@ -27,13 +27,13 @@ public class CustomComparator {
 		});
 	}
 	
-	public static <T> Comparator<T> lexicographicComparator(String...fieldNames) {
+	public static  Comparator<Object> lexicographicComparator(String...fieldNames) {
 		return (first, second) -> {
 			Object firstValue;
 			Object secondValue;
 			for (String fieldName : fieldNames) {
 				try {
-					Field firstField = first.getClass().getField(fieldName);
+					Field firstField = first.getClass().getDeclaredField(fieldName);
 		            firstField.setAccessible(true);
 		            firstValue = firstField.get(first);
 		            Field secondField = second.getClass().getField(fieldName);
@@ -44,8 +44,8 @@ public class CustomComparator {
 					continue;
 				}
 	            if (firstValue != null && secondValue != null) {
-                    @SuppressWarnings({ "unchecked", "rawtypes" })
-					int compare =  ((Comparable) firstValue).compareTo(secondValue);
+                    @SuppressWarnings("unchecked")
+					int compare =  ((Comparable<Object>) firstValue).compareTo(secondValue);
                     if (compare != 0) {
                     	return compare;
                     }

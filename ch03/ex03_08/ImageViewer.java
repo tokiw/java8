@@ -46,7 +46,7 @@ public class ImageViewer extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		ImageView imageView = new ImageView();
-        Image image = new Image(new FileInputStream("/Users/masafumi/Downloads/sample.jpg"));
+        Image image = new Image(new FileInputStream("ch03/ex03_05/sample.jpg"));
         imageView.setImage(image);
 
         VBox root = new VBox();
