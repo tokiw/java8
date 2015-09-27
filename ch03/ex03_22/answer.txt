@@ -1,0 +1,1 @@
+thenCompose(Function<? super T,? extends CompletionStage<U>> fn)
