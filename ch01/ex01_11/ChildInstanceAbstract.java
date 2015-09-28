@@ -5,4 +5,10 @@ public class ChildInstanceAbstract extends SInstance implements IAbstract {
 		// SInstanceのf()
 		new ChildInstanceAbstract().f();
 	}
+
+	@Override
+	public void f() {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
 }

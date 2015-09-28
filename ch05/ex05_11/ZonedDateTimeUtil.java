@@ -10,7 +10,7 @@ public class ZonedDateTimeUtil {
 		ZonedDateTime from = ZonedDateTime.of(2015, 9, 28, 14, 5, 0, 0, ZoneId.of("CET"));
 		ZonedDateTime to = ZonedDateTime.of(2015, 9, 28, 16, 40, 0, 0, ZoneId.of("America/Los_Angeles"));
 		Duration duration = ZonedDateTimeUtil.getTravelTime(from, to);
-		System.out.println("飛行時間: " + duration.toHours() + "時間" + duration.toMinutes() / 60 + "分");
+		System.out.println("飛行時間: " + duration.toHours() + "時間" + duration.toMinutes() % 60 + "分");
 	}
 	
 	public static Duration getTravelTime(ZonedDateTime fromZonedDateTime, ZonedDateTime toZonedDateTime) {

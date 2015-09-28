@@ -1,5 +1,10 @@
 package ex01_11;
 
-public abstract class SAbstract {
-	public abstract void f();
+public class SAbstract implements JAbstract {
+
+	@Override
+	public void f() {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
 }

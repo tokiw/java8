@@ -13,6 +13,7 @@ public class Main {
 		String[] names = { "Peter", "Paul", "Mary" };
 		List<Runnable> runners = new ArrayList<>();
 		for (String name : names) {
+			// nameは毎回作られる
 			runners.add( () -> {
 				// 各nameがキャプチャされる
 				System.out.println(name);

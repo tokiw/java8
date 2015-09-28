@@ -14,7 +14,7 @@ public class Unchecker {
 			try {
 				runnable.run();
 			} catch(Exception e) {
-				throw new RuntimeException();
+				throw new RuntimeException(e);
 			}
 		};
 	}
