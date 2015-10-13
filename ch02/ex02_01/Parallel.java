@@ -12,7 +12,7 @@ import java.util.List;
 public class Parallel {
 	public static void main(String[] args) {
 		try {
-			String contents = new String(Files.readAllBytes(Paths.get("./ch02/ex02_01/momotaro.txt")), StandardCharsets.UTF_8);
+			String contents = new String(Files.readAllBytes(Paths.get("./ch02/ex02_01/alice.txt")), StandardCharsets.UTF_8);
 			List<String> words = Arrays.asList(contents.split("[\\P{L}]+"));
 			System.out.println(parallelCount(words));
 			

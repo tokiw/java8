@@ -1,0 +1,11 @@
+# command
+jjs> var zonedDateTime = java.time.ZonedDateTime.now();
+jjs> zonedDateTime
+2015-10-12T16:43:20.841+09:00[Asia/Tokyo]
+jjs> zonedDateTime.getDayOfMonth();
+12
+
+# answer
+少しメソッドを試すくらいなら便利だが、そのままのjjsだと↑や←→が効かないため不便。(rlwrap jjsだと大丈夫)
+複雑なことを試したいならJavaファイルを作った方が楽。
+ふと試したい時にeclipseを開いてなかったら使うかも。

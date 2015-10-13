@@ -1,0 +1,10 @@
+# command
+
+jjs> var str = "abcde"
+jjs> str.getClass()
+class java.lang.String
+jjs> var scriptStr = str.slice(1)
+jjs> scriptStr.getClass()
+class java.lang.String
+jjs> java.lang.String.class.cast(scriptStr)
+bcde

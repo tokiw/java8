@@ -1,0 +1,9 @@
+# command
+
+jjs> var contents = new java.lang.String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get("./alice.txt")), java.nio.charset.StandardCharsets.UTF_8)
+jjs> var words = java.util.Arrays.asList(contents.split(/[¥W]+/))
+-> エラー: java.lang.ClassCastException: Cannot cast jdk.nashorn.api.scripting.ScriptObjectMirror to [Ljava.lang.Object;
+
+jjs> var StringArray = Java.type("java.lang.String[]")
+jjs> var words = java.util.Arrays.asList(Java.to(contents.split(/[\W]+/), StringArray))
+jjs> words.stream().filter(function(w) {return w.length() > 12}).distinct().sorted().forEach(function(w) {print(w)})

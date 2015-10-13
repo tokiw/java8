@@ -1,0 +1,17 @@
+# command
+
+jjs> var b = new java.math.BigInteger("1234567890987654321")
+jjs> b
+1234567890987654400
+jjs> b.mod(java.math.BigInteger.TEN)
+1
+
+# answer
+
+JavaScriptの整数は-2^53~2^53の範囲で正確に表現できるが1234567890987654321はその範囲を超えているため、
+値に誤差が生じている。
+b.mod(java.math.BigInteger.TEN)で正しく1の結果を取得できるのは内部的には1234567890987654321でもっているので。(表示ができないだけ)
+
+bの実際の値を表示するには
+jjs> java.lang.String.format("%d", b)
+1234567890987654321
