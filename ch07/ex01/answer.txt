@@ -7,5 +7,4 @@ jjs> zonedDateTime.getDayOfMonth();
 
 # answer
 少しメソッドを試すくらいなら便利だが、そのままのjjsだと↑や←→が効かないため不便。(rlwrap jjsだと大丈夫)
-複雑なことを試したいならJavaファイルを作った方が楽。
 ふと試したい時にeclipseを開いてなかったら使うかも。
