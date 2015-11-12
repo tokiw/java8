@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
+import java.util.zip.ZipFile;
 
 public class ZipWalker {
 	public static void main(String[] args) {
@@ -16,11 +17,13 @@ public class ZipWalker {
 	}
 	
 	public static Stream<Path> unzip(Path path) throws IOException {
+//		ZipFile zipFile = new ZipFile(path.toString());
+		
 		return Files.walk(path).filter(p -> p.toFile().isFile()).filter(p -> {
 			try {
 				return Files.readAllLines(p).stream().allMatch( w -> w.contains("transient") || w.contains("volatile"));
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				e.printStackTrace();
 				return false;
 			}
 		});

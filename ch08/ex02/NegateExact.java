@@ -1,6 +1,6 @@
 package ex02;
 
-public class Main {
+public class NegateExact {
 	public static void main(String[] args) {
 		// 普通の数字 -> 問題なし
 		System.out.println(Math.negateExact(1));
