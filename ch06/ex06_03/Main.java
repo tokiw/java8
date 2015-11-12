@@ -12,10 +12,10 @@ import java.util.function.Supplier;
 public class Main {
 	
 	public static void main(String[] args) {
-		System.out.println("AtomicLong: " + getAverage(() -> {
+		System.out.println("AtomicLong:  " + getAverage(() -> {
 			return measureAtomicLong(1000, 100000).toNanos();
 		}) + "ns");
-		System.out.println("AtomicLong: " + getAverage(() -> {
+		System.out.println("AtomicAdder: " + getAverage(() -> {
 			return measureLongAdder(1000, 100000).toNanos();
 		}) + "ns");
 	}

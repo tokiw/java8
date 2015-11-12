@@ -13,14 +13,17 @@ function pipe() {
 		
 	for ( i=0; i < arguments.length; i++ ) {
 		processes.push( new JProcessBuilder( arguments[i].split(" ") ).start() );
-		if ( i > 0 ) {
-			input = processes[i-1].getInputStream();
-			output = processes[i].getOutputStream();
-			while ((value = input.read()) != -1) {
-			  output.write(value);
+		
+		new java.lang.Thread(function () {
+			if ( i > 0 ) {
+				input = processes[i-1].getInputStream();
+				output = processes[i].getOutputStream();
+				while ((value = input.read()) != -1) {
+				  output.write(value);
+				}
+				output.close();
 			}
-			output.close();
-		}
+		}).start();
 	}
 	
 	lastProcess = processes.pop();
