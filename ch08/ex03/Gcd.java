@@ -10,10 +10,6 @@ public class Gcd {
 		int valA = Math.abs(a);
 		int valB = Math.abs(b);
 		
-		if (valA < valB) {
-			valA = Math.abs(b);
-			valB = Math.abs(a);
-		}
 		if (valB == 0) {
 			return a;
 		}
@@ -26,10 +22,6 @@ public class Gcd {
 		int valA = Math.abs(a);
 		int valB = Math.abs(b);
 		
-		if (valA < valB) {
-			valA = Math.abs(b);
-			valB = Math.abs(a);
-		}
 		if (valB == 0) {
 			return a;
 		}
@@ -42,10 +34,6 @@ public class Gcd {
 		int valA = Math.abs(a);
 		int valB = Math.abs(b);
 		
-		if (valA < valB) {
-			valA = Math.abs(b);
-			valB = Math.abs(a);
-		}
 		if (valB == 0) {
 			return a;
 		}
@@ -55,8 +43,8 @@ public class Gcd {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(gcdRem(28, 8));
-		System.out.println(gcdPercent(28, 8));
-		System.out.println(gcdFloorMod(28, 8));
+		System.out.println(gcdRem(8, 28));
+		System.out.println(gcdPercent(8, 28));
+		System.out.println(gcdFloorMod(8, 28));
 	}
 }
